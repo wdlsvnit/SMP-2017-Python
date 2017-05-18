@@ -40,7 +40,7 @@ void sort(int values[], int n)
     int i,j, temp;
     for(i=0;i<(n-1);i++)
     {
-        for(j=1;j<n;j++)
+        for(j=i+1;j<n;j++)
         {
             if (values[i]>values[j])
             {
