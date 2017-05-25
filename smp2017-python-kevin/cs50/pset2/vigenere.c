@@ -11,7 +11,7 @@ int main(int argc, string argv[])
 {
     if(argc!=2 || checkal(argv[1]))
     {
-        printf("Usage: ./caesar k\n");
+        printf("Usage: ./vigenere str\n");
         return 1;
     }
     else
@@ -21,24 +21,28 @@ int main(int argc, string argv[])
         printf("plaintext: ");
         string plain = get_string();
         char cypher[50];
+        int Len1=0;
         for(int i=0; i<strlen(plain); i++)
         {
             //check whether is an alphabet
             if(isalpha(plain[i]))
             {
+                
+                if(Len1==strlen(argv[1]))                    //this is so that argv starts over from first character
+                    Len1=0;
                 int req;
+                char* k=&argv[1][Len1];
                 if(isupper(plain[i]))
                 {
-                    k-=65;
-                    req = algocyph(plain[i],k,65);
+                    req = algocyph(plain[i],*k-65,65);
                 }
                 else
                 {
-                    k-=97;
-                    req = algocyph(plain[i],k,65);   
+                    req = algocyph(plain[i],*k-97,97);   
                 }    
                 plain[i]=(char)req;                //typecasting
                 cypher[i]=plain[i];
+                Len1++;
             }
             else
                 cypher[i]=plain[i];
