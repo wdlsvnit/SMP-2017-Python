@@ -259,7 +259,7 @@ for(int i=0;i<d;i++)
     for(int j=0;j<d;j++)
     {
        // if((i=d-1)&&(j=d-1))
-        //break;
+        //continue;
      if(board[i][j]!=counter)
      {
      return false;
