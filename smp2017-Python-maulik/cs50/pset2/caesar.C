@@ -6,17 +6,17 @@ int main(int argc,char **argv)
 {
 	char str[100],cry[100];
 	int i,j,n;
-	if(argc<2)
+	if(argc!=2)
 	{
 		printf("Usage: ./caesar k\n");
 		return 1;
 	}
 	//string to int
 	j=atoi(argv[1]);
-	
-	printf("plain text:");
+
+	printf("plain text: ");
 	gets(str);
-	
+
 		i=0;
 	    while(str[i]!='\0')
 	    {
@@ -29,9 +29,9 @@ int main(int argc,char **argv)
 			}
 			else if(isupper(str[i]))
 			{
-				n=str[i]-'a'+1; //1 for A , 26 for Z
+				n=str[i]-'A'+1; //1 for A , 26 for Z
 				n=(n+j)%26;  // Algorithm
-				n=n-1+'a'; //65 for A
+				n=n-1+'A'; //65 for A
 				cry[i]=n;
 			}
 			else
@@ -39,8 +39,8 @@ int main(int argc,char **argv)
 			i++;
 	    }
 	    cry[i]='\0';
-	
-	    printf("\ncipher text:%s\n",cry);
+
+	    printf("\ncipher text: %s\n",cry);
 	    return 0;
-	
+
 }
