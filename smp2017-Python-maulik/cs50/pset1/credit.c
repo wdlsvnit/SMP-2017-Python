@@ -3,7 +3,7 @@
 int main(void)
 {
 	unsigned long long int ccn,smpl;
-	int cnt=1,sum=0,i;
+	int cnt=1,sum=0,i,n;
 
 	printf("Enter your credit card number :");
 	scanf("%lld",&ccn);
@@ -13,17 +13,26 @@ int main(void)
 	while(smpl>0)
 	{
 		i=smpl%10;
-
-		if(cnt%2!=0)
-			sum+=(2*i);
+		n=i;
+		if(cnt%2==0)
+		{
+			n=2*i;
+			while(n>0)
+			{
+				sum+=n%10;
+				n=n/10;
+			}
+		}
 		else
+		{
 			sum+=i;
+		}
 		cnt++;
 		smpl=smpl/10;
 	}
 
-	if(sum%10)
+	if(sum%10==0)
 		printf("\nYour Credit card is Legit.\n");
 	else
-		printf("You cheated.Invalid credit card!\n");
+		printf("\nYou cheated.Invalid credit card!\n");
 }
