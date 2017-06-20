@@ -16,7 +16,7 @@
 ### lesson05
 * Writing a Complete Program Guess the Number
 
-### lesson06
+### lesson06 
 * Lists
 
 ### lesson07
