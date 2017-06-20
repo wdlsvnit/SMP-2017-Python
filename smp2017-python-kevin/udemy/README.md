@@ -1,16 +1,29 @@
 # **Udacity**
 ## Kevin James
 
-### lesson1
+### lesson01
 * Python Basics
 
-### lesson2
+### lesson02
 * Flow Control
 
-### lesson3
+### lesson03
 * Functions
 
-### lesson4
+### lesson04
 * Handling errors with tryexcept
 
+### lesson05
+* Writing a Complete Program Guess the Number
 
+### lesson06
+* Lists
+
+### lesson07
+* Dictionaries
+
+### lesson08
+* More About Strings
+
+### lesson10
+* Regular Expressions
