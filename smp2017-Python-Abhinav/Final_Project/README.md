@@ -1,0 +1,1 @@
+#This webapp shows news input by users regarding SVNIT classified by which campus building it relates to. Articles are displayed via markers on top of the building use google maps API. 

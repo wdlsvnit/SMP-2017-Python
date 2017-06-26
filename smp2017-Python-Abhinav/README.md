@@ -1,2 +1,2 @@
 # SMP-2017-Python
-Python projects created by students as part of SMP 2017
+Python project created by Abhinav Jain (U16EC067) as part of Summer Mentorship Profram 2017

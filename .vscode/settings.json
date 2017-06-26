@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "editor.rulers": [80,100],
+    "python.pythonPath": "D:/Git/fprojvenv/Scripts/python.exe",
+    "python.pythonPath": "D://Git//fprojvenv//Scripts//python.exe"
+}
