@@ -1,1 +1,0 @@
-Solution of cs50x

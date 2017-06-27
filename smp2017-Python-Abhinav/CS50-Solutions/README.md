@@ -29,3 +29,9 @@
 	+ caesar
 	+ greedy
 	+ mario
+
+### 7. pset7
+	+ CS50 Finance
+
+### 8. pset8
+	+ Mashup
