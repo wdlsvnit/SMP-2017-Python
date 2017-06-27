@@ -1,2 +1,8 @@
 flask
 flask-bootstrap
+flask-mail
+flask-wtf
+sqlalchemy
+flask-login
+Werkzeug
+itsdangerous

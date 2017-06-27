@@ -1,14 +1,7 @@
 import sqlalchemy
-import os
-'''Import environ'''
-def init():
-    '''Set environment variables'''
-    os.environ['secret_key'] = 'string'
-    os.environ['FLASK_APP'] = "application.py"
-    os.environ['test']='halelujah'
 
 class SQL(object):
-    """Creates a SQL connection"""
+    """Creates a SQL connection. Excerpts of code used from CS50 Library     """
 
     def __init__(self, url):
         """Create engine"""
