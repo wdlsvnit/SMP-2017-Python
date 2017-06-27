@@ -1,0 +1,4 @@
+0. TODO Any dimension from 3x3 to 9x9
+1. TODO An array of integers
+2. TODO greet()
+3. TODO init() draw() move() and won()
