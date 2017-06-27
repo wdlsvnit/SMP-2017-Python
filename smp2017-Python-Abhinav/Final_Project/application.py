@@ -1,7 +1,16 @@
+#TODO: Main application
+
+
+
+
+
+
+
+
 #pylint: disable=invalid-name
 '''disables pylint constant name error'''
 
-import os
+'''import os
 from flask import Flask, redirect, session, render_template, url_for, flash
 from flask_script import Manager
 from flask_bootstrap import Bootstrap
@@ -48,4 +57,4 @@ def index():
 if __name__ == "__main__":
     manager.run()
     #app.run(debug=True)
- 
+ '''
