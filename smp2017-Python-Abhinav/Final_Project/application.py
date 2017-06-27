@@ -1,6 +1,14 @@
 #TODO: Main application
+from flask import Flask
+from flask_script import Manager
 
 
+APP = Flask(__name__)
+MANAGER = Manager(APP)
+
+
+if __name__=='__main__':
+    MANAGER.run()
 
 
 
