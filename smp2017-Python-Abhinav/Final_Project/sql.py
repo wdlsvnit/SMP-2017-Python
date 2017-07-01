@@ -1,8 +1,6 @@
 #TODO: Class to execute sql statements
 
-
-
-'''import sqlalchemy
+import sqlalchemy
 
 class SQL(object):
     """Creates a SQL connection. Excerpts of code used from CS50 Library     """
@@ -43,6 +41,3 @@ class SQL(object):
 
         except Exception as e:
             raise RuntimeError(e)
-
-
-'''

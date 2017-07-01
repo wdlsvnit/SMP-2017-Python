@@ -1,15 +1,21 @@
 #TODO: Main application
 from flask import Flask
 from flask_script import Manager
-
+from sql import SQL
+from flask_bootstrap import Bootstrap
 
 APP = Flask(__name__)
 MANAGER = Manager(APP)
-from views import *
+BOOTSTRAP = Bootstrap(APP)
 APP.config.from_pyfile('config.py')
+
+db = SQL("sqlite:///fproj.db")
+
+from views import *
 
 
 if __name__=='__main__':
+    #MANAGER.run()
     APP.run(debug=True)
 
 #pylint: disable=invalid-name

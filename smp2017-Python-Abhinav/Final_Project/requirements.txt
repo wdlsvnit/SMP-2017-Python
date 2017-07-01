@@ -6,3 +6,4 @@ sqlalchemy
 flask-login
 Werkzeug
 itsdangerous
+flask-script
