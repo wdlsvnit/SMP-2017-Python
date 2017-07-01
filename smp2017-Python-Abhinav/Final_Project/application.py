@@ -5,26 +5,19 @@ from flask_script import Manager
 
 APP = Flask(__name__)
 MANAGER = Manager(APP)
+from views import *
+APP.config.from_pyfile('config.py')
 
 
 if __name__=='__main__':
-    MANAGER.run()
-
-
-
-
-
+    APP.run(debug=True)
 
 #pylint: disable=invalid-name
 '''disables pylint constant name error'''
 
 '''import os
 from flask import Flask, redirect, session, render_template, url_for, flash
-from flask_script import Manager
 from flask_bootstrap import Bootstrap
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import Required
 from helpers import init, SQL
 from flask_mail import Mail
 
@@ -44,14 +37,10 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 
 mail = Mail(app)
 
-class forms(FlaskForm):
-    '''a form'''
-    name = StringField("Name", validators=[Required()])
-    submit = SubmitField('Submit')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    '''docstring'''
+    docstring
     form = forms()
     if form.validate_on_submit():
         if session.get('name') != form.name.data:
