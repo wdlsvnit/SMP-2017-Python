@@ -82,6 +82,7 @@ celerybeat-schedule
 .env
 .venv
 env/
+venv/
 fprojvenv/
 ENV/
 
@@ -90,7 +91,7 @@ ENV/
 .spyproject
 
 #VScode project
-.vscode
+.vscode/
 
 # Rope project settings
 .ropeproject
