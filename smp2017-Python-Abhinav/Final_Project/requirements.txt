@@ -7,3 +7,4 @@ flask-login
 Werkzeug
 itsdangerous
 flask-script
+flask-session

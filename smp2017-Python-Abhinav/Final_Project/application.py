@@ -3,11 +3,31 @@ from flask import Flask
 from flask_script import Manager
 from sql import SQL
 from flask_bootstrap import Bootstrap
+from flask_session import Session
+from flask_mail import Mail
 
 APP = Flask(__name__)
+
+APP.config.from_pyfile('config.py')
+app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+
+MAIL = Mail(app)
+
 MANAGER = Manager(APP)
 BOOTSTRAP = Bootstrap(APP)
-APP.config.from_pyfile('config.py')
+SESSION = Session(APP)
+
+if APP.config["DEBUG"]:
+    @APP.after_request
+    def after_request(response):
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+        response.headers["Expires"] = 0
+        response.headers["Pragma"] = "no-cache"
+        return response
 
 db = SQL("sqlite:///fproj.db")
 
@@ -25,7 +45,6 @@ if __name__=='__main__':
 from flask import Flask, redirect, session, render_template, url_for, flash
 from flask_bootstrap import Bootstrap
 from helpers import init, SQL
-from flask_mail import Mail
 
 
 init()
@@ -35,13 +54,6 @@ manager = Manager(app)
 app.config['SECRET_KEY'] = os.environ['secret_key']
 db = SQL("sqlite:///fproj.db")
 
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
-
-mail = Mail(app)
 
 
 @app.route('/', methods=['GET', 'POST'])
