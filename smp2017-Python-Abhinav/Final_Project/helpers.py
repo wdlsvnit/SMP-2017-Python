@@ -18,10 +18,10 @@ def login_required(f):
     return decorated_function
 
 
-def send_conf(email,uid):
+def send_conf(email,uid,name):
     s = Serializer(APP.config['SECRET_KEY'], 3600)
     token = s.dumps({'confirm': uid})
-    send_email(email,"Verification", 'template', token = token)
+    send_email(email,"Verification", 'template', token = token,name = name)
  
 def acc_confirm(token):
     s = Serializer(APP.config['SECRET_KEY'], 3600)

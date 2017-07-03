@@ -11,6 +11,8 @@ from helpers import login_required, send_conf, acc_confirm
 def login(*kwargs):
     '''index'''
     form = LoginForm()
+    if session.get("id")!=None:
+        redirect(url_for('secret'))
     if request.method == "POST":
         if form.validate_on_submit():
             password = form.password.data
@@ -18,7 +20,7 @@ def login(*kwargs):
             row = db.execute("SELECT passhash,confirmed from test4 where email=:email",email=email)
             if row == []:
                 flash("Invalid ID/Password")
-                return redirect(url_for("login"))
+                return redirect(url_for("login", next = request.args.get('next')))
             if check_password_hash(row[0]['passhash'],password):
                 #LOGIN
                 if row[0]['confirmed']== 'false' :
@@ -29,20 +31,18 @@ def login(*kwargs):
                 form.password.data = ''
                 form.checkbox.data = ''
                 session["id"] = rows[0]['id']
-                return render_template('secret.html')
+                return redirect_dest('secret')
             else:
                 form.email.data = ''
                 form.password.data = '' 
                 form.checkbox.data  = ''
                 flash("Invalid ID/Password")
-                if(next==None):
-                    return redirect(url_for("login"))
-                else:
-                    return redirect(url_for(next))
+                return redirect(url_for("login", next = request.args.get('next')))
         else:
-            return redirect(url_for("signup"))
+            flash("Retry")
+            return redirect(url_for("login", next = request.args.get('next')))
     
-    if request.method == "GET":
+    else:
         return render_template('login.html', form=form)
 
 @APP.route('/', methods = ['GET'])
@@ -75,8 +75,8 @@ def signup():
                     form.rollno.data = ''
                     form.firstname.data=''
                     form.lastname.data=''
-                    id = db.execute("SELECT id from test4 where email =  :email",email=email)
-                    send_conf(email,id[0]['id'])
+                    id = db.execute("SELECT id,firstname from test4 where email =  :email",email=email)
+                    send_conf(email,id[0]['id'],id[0]['firstname'])
                     flash("Confirmation sent. Expires in 1 hour")
                     return render_template('index.html')
                 else:
@@ -92,7 +92,7 @@ def signup():
 @login_required
 def secret():
     flash("Logged in")
-    render_template('secret.html')
+    return render_template('secret.html')
 
 @APP.route('/logout', methods = ['GET'])
 def logout():
@@ -114,13 +114,19 @@ def confirm(token):
 def resend_conf():
     form = ResendForm()
     if form.validate_on_submit():
-        rows = db.execute("SELECT id from test4 where email =  :email",email=form.email.data)
+        rows = db.execute("SELECT id,firstname from test4 where email =  :email",email=form.email.data)
         if rows==[]:
             flash("Email id doesnt match")
             return redirect(url_for('resend_conf'))
         else:
-            send_conf(form.email.data,rows[0]['id'])
+            send_conf(form.email.data,rows[0]['id'],rows[0]['firstname'])
             flash("Confirmation Resent, Expires in 1 hour")
             return render_template('index.html')
     else:
         return render_template("resend_conf.html",form = form)
+
+def redirect_dest(home):
+    dest_url = request.args.get('next')
+    if not dest_url:
+        return redirect(url_for(home))
+    return redirect(dest_url)
