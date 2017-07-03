@@ -1,1 +1,1 @@
-Hey {{ url_for('confirm', token=token, _external=True) }}
+Hey {{name}}, <br> Welcome to APP.<br> To activate your account on APP, click the following URL:<br> {{ url_for('confirm', token=token, _external=True) }}<br> This URL expires in 1 hour.
