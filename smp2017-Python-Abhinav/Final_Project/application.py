@@ -9,14 +9,8 @@ from flask_mail import Mail
 APP = Flask(__name__)
 
 APP.config.from_pyfile('config.py')
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 
-MAIL = Mail(app)
-
+MAIL = Mail(APP)
 MANAGER = Manager(APP)
 BOOTSTRAP = Bootstrap(APP)
 SESSION = Session(APP)

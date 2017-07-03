@@ -10,7 +10,7 @@ class LoginForm(FlaskForm):
     email = StringField("Name", validators=[Required()])
     password = PasswordField("Password", validators=[Required()])
     checkbox = BooleanField("Remember Me")
-    submit = SubmitField("Submit")
+    submit = SubmitField("Login")
     
 class SignupForm(FlaskForm):
     '''Signup form'''
@@ -19,4 +19,11 @@ class SignupForm(FlaskForm):
     passwordb = PasswordField("Password", validators=[Required()])
     hostel = StringField("Hostel Name", validators=[Required()])
     rollno = StringField("SVNIT Roll number", validators=[Required()])
+    firstname = StringField("First Name", validators=[Required()])
+    lastname = StringField("Last name", validators=[Required()])
+    submit = SubmitField("Sign Up")
+    
+class ResendForm(FlaskForm):
+    '''Resend conf form '''
+    email = StringField("Email", validators=[Required()])
     submit = SubmitField("Submit")
