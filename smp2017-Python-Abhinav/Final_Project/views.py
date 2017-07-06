@@ -2,7 +2,7 @@
 import sys
 from application import APP, BOOTSTRAP, SESSION
 from flask import redirect, session, request, render_template, url_for, flash
-from form import LoginForm, SignupForm, ResendForm
+from form import LoginForm, SignupForm, ResendForm, PostForm
 from application import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from helpers import login_required, send_conf, acc_confirm
@@ -130,3 +130,14 @@ def redirect_dest(home):
     if not dest_url:
         return redirect(url_for(home))
     return redirect(dest_url)
+
+@APP.route('/map')
+@login_required
+def map():
+    return render_template('map.html')
+
+@APP.route('/post')
+@login_required
+def post():
+    form = PostForm()
+    return render_template('post.html', form = form)

@@ -27,3 +27,10 @@ class ResendForm(FlaskForm):
     '''Resend conf form '''
     email = StringField("Email", validators=[Required()])
     submit = SubmitField("Submit")
+
+class PostForm(FlaskForm):
+    '''Post form'''
+    title = StringField("Title", validators=[Required()])
+    post = StringField("Gossip", validators=[Required()])
+    hostel = StringField("Hostel Name", validators=[Required()])
+    submit = SubmitField("Post")

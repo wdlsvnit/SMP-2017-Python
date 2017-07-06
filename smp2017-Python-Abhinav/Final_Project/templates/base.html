@@ -17,8 +17,8 @@
             {% if session.id %}
             <ul class="nav navbar-nav">
                 {% block leftnavloggedin %} {% endblock %}
-                <li><a href="{{ url_for('index') }}">Post</a></li>
-                <li><a href="{{ url_for('index') }}">Map</a></li>
+                <li><a href="{{ url_for('post') }}">Post</a></li>
+                <li><a href="{{ url_for('map') }}">Map</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% block rightnavloggedin %}{% endblock %}
