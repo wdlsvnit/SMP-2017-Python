@@ -7,7 +7,7 @@ In the directory of final project, run the following commands
 # export FLASK_APP = "application.py"
 # export SECRET_KEY =  "seret key"
 This is a secret key used to authorize requests 
-# export MAIL_USERNAME = "example@example.com"
+# export MAIL_USERNAME = "example@ex.com"
  This is the admin email account email to send confirmation emails 
 # export MAIL_PASSWORD = "password"
 This is the admin email account Password 
