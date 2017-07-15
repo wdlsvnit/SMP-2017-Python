@@ -1,0 +1,12 @@
+1.  stdint.h is a header file that changes the type of integers depending on no: of bytes needed to use, etc using macros
+2.  Based on how the integer type has to be used (i.e no of bytes, signed and unsigned) uint8_t, uint32_t, int32_t, and uint16_t are used
+3.  BYTE:1, DWORD:4, LONG:4, WORD:2
+4.  The first 2 bytes of the BMP file format are the character "B" then the character "M"
+5.  bf is size of the bmp file while bi is size of the structure
+6.  If biHeight is negative,the image is bottom down.
+7.  biBitCount
+8.  whe the file doesn't exist
+9.  reading pixel 1 by 1
+10. 3
+11. changes pointer's position
+12. tells current position

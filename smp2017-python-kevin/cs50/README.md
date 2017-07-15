@@ -14,5 +14,16 @@
 	* find
 	* fifteen
 
+### pset4
+	* recover
+	* resize
+	* whodunit
 
+### pset5
+    *speller
+    
+### pset6
+    *greedy
+    *mario
+    *vigenere
 
