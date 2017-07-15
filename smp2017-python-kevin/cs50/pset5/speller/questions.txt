@@ -1,0 +1,9 @@
+0.  lung disease
+1.  returns the pointer to a struct containing information like CPU time, memory usage
+2.  2
+3.  quicker and more efficient
+4.  in the for loop, first it read character by character using ''fgetc()'' till the end of the file; the first if condition makes sure a alphabet is read
+and an apostrophe (if it not at the start: INDEX>0); if it exceeds the LENGTH limit of the worf then the INDEX is set to 0. the next else if cond. makes
+sure that digit is ignored, so INDEX is set to 0. The last condition increments WORDS and checks whethe the word is mispelled; if so, MISPELL increments. 
+5.  fscan ignores whitespace; chances of error is more. 
+6.  const makes sure the character value in a WORD is not to be changed (pointer to a const)
