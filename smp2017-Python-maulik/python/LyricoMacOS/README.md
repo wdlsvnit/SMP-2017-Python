@@ -24,5 +24,3 @@ Also, songs must be present in **iTunes** with **_same_** artist name
  > <br>**LyricoGUI** - GUI app</br>
  > <br>**LyricoCLI** - CLI version</br>
 
-### Known bugs
->Exception Handling with GUI version
