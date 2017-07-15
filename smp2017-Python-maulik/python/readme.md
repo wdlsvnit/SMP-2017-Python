@@ -5,8 +5,6 @@ _Automates_ the **Boring task** of _searching_ for songs in folder without a lyr
 ## Specification
 
 - Lyrico: A simple GUI app using tkinter package of Python
-<br>Windows - [LyricoWin](LyricoWin)</br>
-macOS - [LyricoMacOS](LyricoMacOS)
-
-
+<br>macOS - [LyricoMacOS](LyricoMacOS)</br>
+OtherOS - [LyricoWin](LyricoWin)
  
