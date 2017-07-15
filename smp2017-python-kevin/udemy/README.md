@@ -1,4 +1,4 @@
-# **Udacity**
+# **Udemy**
 ## Kevin James
 
 ### lesson01
@@ -16,14 +16,17 @@
 ### lesson05
 * Writing a Complete Program Guess the Number
 
-### lesson06 
+### lesson06
 * Lists
 
 ### lesson07
 * Dictionaries
-
-### lesson08
-* More About Strings
-
+ 
 ### lesson10
 * Regular Expressions
+
+### lesson11
+* Files
+
+### lesson12
+* Debugging
