@@ -1,1 +1,3 @@
-incase I missed something
+# Python practice projects
+
+Practice projects of Udemy course
