@@ -1,6 +1,6 @@
 # Lyrico
 
-_"Automated the boring task"_:
+<br>_"Automated the boring task"_:</br>
 Search for _mp3_ files in provided folder and add _lyrics_ as a text file
 to a folder named **"MyLyrics"** in the provided folder
 
@@ -11,15 +11,13 @@ to a folder named **"MyLyrics"** in the provided folder
 
 
 ## Built With
->[Python 3](https://www.python.org/download/releases/3.0/)
+><br>[Python 3](https://www.python.org/download/releases/3.0/)</br>
 >tkinter - Python's de-facto standard GUI package
 
 ## Usage Guide
 Provide accurate **artist name** and **song name** to avoid any malfunction
 
 ## Specification
- > **LyricoGUI.pyw** - GUI app
- >  **LyricoCLI.py** - CLI version
+ ><br>**LyricoGUI.pyw** - GUI app</br>
+ > **LyricoCLI.py** - CLI version
 
-### Known bugs
->Exception Handling with GUI version
